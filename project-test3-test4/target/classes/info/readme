@@ -1,0 +1,35 @@
+1. mvc 개념
+2. 클라이언트에서 서버로 요청하는 방법 1.submit, a, js
+   get VS Post , 파라미터등 
+3. 컨트롤로에서 파라미터 받는 방법 1. httpservletRequest, param, 객체
+4. 게시판 글쓰기, 컨트롤러 처리, 게시판리스트로 동작하는 패턴
+5. mybatis
+    di개념, 컨테이너, mybatis에서 설정에 필요한 객체
+      주입방법 : 생성자와 property(setter)
+    sqlsession    sqlsessinFactory  datasource
+    
+    spring에서 mybatis를 사용하기 위한 방법은 인터페이스
+       스프링에서 하나의 인터페이스는 하나의 개체만 구현이 가능 
+       스프링에서 bean으로 등록하기 위한 어노 테이션 @Service @Repository  >> root_context.xml에서 Scan 추가 해야 함
+    
+      컨트롤러    <>     서비스     <>    인터페이스  <>        mabatis
+               클라이언트서비스 중심            데이터베이스쿼리매핑중심
+               
+      프레임워크   
+    DI, 컨테이너, 컨트롤러처리
+                     [ 파라미터처럼 : 객체, request, 어노테이션 기본단서:get, post]
+                     [json]
+    page   처리
+    session   처리
+    intercepter  처리
+       첨부파일 기능 처리  <클라이언트이 파일을 서버로 올리기, 파일의정보를 DB저장>
+    DB 처리
+    
+      모든 처리를 컨트롤러가 하지 않는다.. 이중 database에 관려한 부분은  service로 넘긴다.
+    
+    @ModelAttribute PageVO pageVO            >> 클라이언트가 보낸 파라미터를  PageVO객체가 자동으로 매핑해서 객체로 사용하게 해준다
+                                             >> 이 방법은 pageVO 객체를  view에서도 사용학 할 수 있다..${pageVO.getter }
+    @ModelAttribute("kkk") PageVO pageVO     >> 이 방법은  view에서 사용할 객체명을 지정해 주는 것이다.. ${kkk.getter }
+    @ModelAttribute("pageVO") PageVO pageVO  >> 혼동을 위해 이런 방식을 많이 사용한다. 
+    
+    https://mangkyu.tistory.com/72

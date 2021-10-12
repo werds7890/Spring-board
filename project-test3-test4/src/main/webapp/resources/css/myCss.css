@@ -1,0 +1,120 @@
+@charset "UTF-8";
+
+/* 헤더 및 네비 */
+.sign{
+    float: right;
+    text-decoration: none;
+    color: #666;
+    font-size: small;
+    margin: 10px 0 10px 0;
+}
+.header{
+    clear: both;
+}
+.header{
+    background-color:lightblue;
+    text-align: center;
+    height: 200px;
+    margin-top: 20px;
+}
+.header h1{
+    font-family: 'Black Han Sans', sans-serif;
+    padding-top: 60px;
+}
+.header p{
+    font-family: 'Yeon Sung', cursive;
+    padding-bottom: 20px;
+}
+nav{
+    font-family: 'Nanum Gothic Coding', monospace;
+    font-weight: bold;
+}
+.board_main{
+    margin-top: 20px;
+}
+
+#writing{
+    float: right;
+}
+.pagination{
+    clear: both;
+    width: 300px;
+    margin: 0 auto;
+}
+section{
+    font-family: 'Nanum Gothic Coding', monospace;
+    font-weight: bold;
+}
+#what{
+    border-bottom: 2px solid gray;
+    margin-bottom: 10px;
+}
+
+/* 글쓰기 폼 */
+.write_main{
+    margin-top: 20px;
+}
+.write_form{
+    width: 100%;
+}
+.write_form tr:nth-child(-n+2){
+    height: 50px;
+}
+.write_form tr td:first-child{
+    width: 70px;
+    font-weight: bold;
+}
+.write_form tr:last-child td{
+    height: auto;
+    vertical-align: top;
+    padding-top: 10px;
+}
+#in_text{
+    width: 100%;
+}
+#go_back{
+    float: right;
+    margin-right: 10px;
+}
+
+/* 댓글 */
+.comments{
+    clear: both;
+    border-top: 1px solid rgb(189, 188, 188);
+    margin-top: 70px;
+    padding-top: 20px;
+}
+.co-table tr th{
+    width: 100px;
+}
+.co-table tr td:last-child{
+    width: 130px;
+    color: #999;
+}
+.write-comment{
+    margin-bottom: -30px;
+    width: 100%;
+}
+.write-comment #id-label{
+    vertical-align: top;
+}
+.write-comment #co{
+    width: 100%;
+}
+.comments .btn{
+    float: right;
+    margin-top: 30px;
+    background-color: #999;
+    color: honeydew;
+    margin-right: 5%;
+}
+
+/* 푸터 */
+.liney{
+    clear: both;
+    margin: 70px 0 20px 0;
+}
+footer{
+    margin-top: 30px;
+    font-size: small;
+}

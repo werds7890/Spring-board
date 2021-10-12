@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.game.DAO.game_if_DAO">
+	
+	<select id="idchecking" resultType="int">
+		select count(*) from member2 where id=#{id}
+	</select>
+	
+	<insert id="register">
+		insert into member2 values (member2_seq.nextval,#{id},#{name},#{pass})
+	</insert>
+	
+	<select id="selectOne" resultType="com.human.VO.memberVO">
+		select * from member2 where id in(#{id}) and pass in(#{pass})
+	</select>
+	
+	<insert id="insertboard">
+		insert into bbs values(bbs_seq.nextval,#{title},#{id},#{memo},default,default,#{flag})
+	</insert>
+	
+	<select id="selectall" resultType="com.human.VO.BBSVO">
+	select * from
+	(select rownum as k, b.* from 
+	(select * from bbs order by day desc) b)
+	where k between #{startNo } and #{end }
+	</select>
+	
+	<update id="cntup">
+		update bbs set cnt=cnt+1 where no=#{no}
+	</update>
+	
+	<select id="bbsview" resultType="com.human.VO.BBSVO">
+		select*from bbs where no=#{no}
+	</select>
+	
+	<insert id="insertcmt">
+		insert into bbscomment values(bbscom_seq.nextval,#{id},#{memo},#{no},default)
+	</insert>
+	
+	<select id="selectcmt" resultType="com.human.VO.CommentVO">
+		select*from bbscomment where no=#{no} order by day desc
+	</select>
+	
+	<delete id="deleteBoard">
+		delete from bbs where no=#{no}
+	</delete>
+	
+	<update id="updateBoard">
+		update bbs set title=#{title},memo=#{memo} where no=#{no}
+	</update>
+	
+	<delete id="deletecmt">
+		delete from bbscomment where bbscommno=#{bbscommno}
+	</delete>
+	
+	<select id="boardcnt" resultType="int">
+		select count(*) from bbs
+	</select>
+	
+	
+	
+</mapper>
+<!-- 주의점 1-4번 라인 시작점에 공백이 있으면 안된다. -->
